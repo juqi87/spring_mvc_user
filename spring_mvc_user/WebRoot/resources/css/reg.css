@@ -1,0 +1,299 @@
+@charset "utf-8";
+body {
+	font-family: "宋体";
+	font-size: 12px;
+	background-color: #e5f2ff;
+	margin:0 auto;
+}
+input,from,h2,h3 {
+	padding:0;
+	margin:0;
+}
+.login {
+	padding-top: 100px;
+	height:443px;
+	background:url(../imgs/bg.gif) repeat-x left -60px;
+}
+
+.logink {
+	height:443px;
+	width:870px;
+	background:url(../imgs/logbg.gif) no-repeat !important;
+	background:url(../imgs/logbg.gif) no-repeat;
+	margin:0 auto;
+}
+*html .logink {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../imgs/logbg.png",sizingMethod='crop');	
+}
+
+
+.loginkl {
+	width:335px;
+	float:left;
+}
+.dail {
+	width:325px;
+	color:#27951b;
+	line-height:20px;
+	font-weight:bold;
+	padding-left:10px;
+	padding-top:170px;
+	font-size:14px;
+	height:80px;
+}
+.logind {
+	color:#27a619;
+	padding-top:15px;
+	padding-left:10px;
+}
+.loginkr {
+	width:366px;
+	float:right;
+	padding:160px 0px 0 0;
+}
+a, a:visited {
+	color: #000;
+	text-decoration:none;
+}
+a:hover,a:active {
+	color: #000;
+	text-decoration: underline;
+}
+.logi {
+	font-size:12px;
+	color:#000;
+	font-weight:bold;
+	padding-bottom:10px;
+	line-height:25px;
+	height:36px;
+}
+.logi img {
+	width:83px;
+	height:26px;
+}
+.logi label {
+	color:#cd0000;
+	height:29px;
+	line-height:29px;
+	float:left;
+	margin-top:2px;
+	cursor:pointer;
+}
+.logi b {
+	float:left;
+	margin-top:4px;
+	font-size:14px;
+	display:block;
+	width:60px;
+}
+.logi span{
+	float:left;
+	margin-right:3px;
+}
+.logi input {
+	border:1px solid #7ca2c4;
+	background-color:#edf5fc;
+	float:left;
+	height:20px;
+	line-height:26px;
+}
+.binpt {
+	width:186px;
+	margin-right:5px;
+	font-size:22px;
+	padding:3px;
+	margin-top:3px;
+}
+.binptw {
+	width:186px;
+	font-size:22px;
+	padding:3px;
+}
+.binpty {
+	width:100px;
+	border:1px solid #85bf96;
+	font-size:22px;
+	padding:3px;
+}
+.dw {
+	width:133px;
+	height:39px;
+	background:url(../imgs/dlpt.gif) no-repeat;
+	margin-left:60px;
+	border:0 solid #FFF;
+	cursor:pointer;
+	margin-top:20px;
+}
+.protol {
+	color: #000;
+	line-height:22px;
+	font-size:14px;
+	padding-top:20px;
+	font-weight:bold;
+}
+.protol span {
+	color: #27951b;
+}
+.loginbd {
+	width:700px;
+	text-align:center;
+	padding-top:20px;
+	margin:0 auto;
+	color:#024488;
+	line-height:20px;
+}
+.loginbd a:link,.loginbd a:visited {
+	color:#024488;
+	text-decoration:none;
+}
+.loginbd a:hover,.loginbd a:active {
+	color:#024488;
+	text-decoration: underline;
+}
+/*新用户注册*/
+.regtop {
+	background: url(../imgs/sd.jpg) no-repeat;
+	width: 760px;
+	margin:30px auto 0;
+	padding-top:57px;
+}
+.regtop div {
+	background:url(../imgs/regbg.jpg) repeat-x;
+	border-right:1px solid #6fbae0;
+}
+.regtop div h2 {
+	background:url(../imgs/regb.jpg) no-repeat;
+	width:122px;
+	color:#FFF;
+	text-align:center;
+	line-height:33px;
+	font-size:16px;
+}
+.retc {
+	width: 740px;
+	margin:0 auto;
+	padding-top:20px;
+}
+.regtab {
+	line-height:25px;
+	border-collapse:collapse;
+}
+.regtab td,th {
+	padding:5px 5px 5px 0;
+}
+.regtab th {
+	border-right: #77dc50 1px;
+	border-top: #77BFE1 1px solid;
+	border-left: #77BFE1 1px solid;
+	color: #333;
+	padding-top: 10px;
+	border-bottom: #77BFE1 1px solid;
+	background-color: #BBDFF0;
+	text-align: right;
+}
+.regtab td {
+	border-right: #77BFE1 1px solid;
+	border-top: #77BFE1 1px solid;
+	border-left: #e7e3e7 1px;
+	color: #000;
+	border-bottom: #77BFE1 1px solid;
+	padding-left:10px;
+	background-color:#E7F3FA;
+}
+.regtab input,select {
+	font-size:12px;
+}
+.regtabpt {
+	width:50px;
+}
+.regtabpts1 {
+	width:180px;
+}
+.regbott {
+	line-height: 22px;
+	text-align: center;
+	border-top:2px solid #0283c5;
+	width:760px;
+	margin:0 auto;
+	margin-top:10px;
+	color:#024488;
+}
+.regbott a:link,.regbott a:visited {
+	color:#024488;
+	text-decoration:none;
+}
+.regbott a:hover,.regbott a:active {
+	color:#024488;
+	text-decoration: underline;
+}
+.zcbaner {
+	width: 250px;
+	padding-top: 20px;
+	margin:0 auto;
+	height:32px;
+	clear:both;
+}
+.zcbaner input {
+	width:109px;
+	height:32px;
+	border:0 solid #FFF;
+	cursor:pointer;
+}
+.zcbaner1 {
+	background:url(../imgs/zhuce.gif);
+	float:left;
+}
+.zcbaner2 {
+	background:url(../imgs/back.gif);
+	float:right;
+}
+.span1{
+	color:#F00;
+}
+.span2{
+	color:green;
+}
+
+/*服务协议*/
+.fmtprot {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+.fmtprot h3 {
+	display:block;
+	line-height:30px;
+	margin:0 0 15px;
+	border-bottom:1px dashed #649bd9;
+}
+.fmtprot textarea {
+	width:680px;
+	height:300px;
+	font-size:14px;
+}
+.probaner3 {
+	background:url(../imgs/clo.gif);
+	margin:0 75px;
+}
+.dws0 {
+	width:133px;
+	height:39px;
+	background:url(../imgs/dlptsq.gif) no-repeat;
+	margin-left:60px;
+	border:0 solid #FFF;
+	cursor:pointer;
+	margin-top:20px;
+}
+
+.scbar {
+	width:28px;
+	height:155px;
+	position: relative;
+	left:872px;
+	top:150px;
+}
+.scbar a {
+	display:block;
+	height:155px;
+	text-decoration:none;
+}
