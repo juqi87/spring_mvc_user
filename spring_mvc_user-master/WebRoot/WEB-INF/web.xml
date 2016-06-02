@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<!-- 这些静态资源不经过spring的转发器进行转发，直接解析 -->
+	<servlet-mapping>
+		<servlet-name>default</servlet-name>
+		<url-pattern>*.css</url-pattern>
+		<url-pattern>*.js</url-pattern>
+		<url-pattern>*.gif</url-pattern>
+		<url-pattern>*.jpg</url-pattern>
+		<url-pattern>*.png</url-pattern>
+		<url-pattern>*.xml</url-pattern>
+		<url-pattern>*.htm</url-pattern>
+		<url-pattern>*.html</url-pattern>
+		<url-pattern>*.ico</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>ecsideExport</filter-name>
+		<filter-class>org.ecside.filter.ECSideFilter</filter-class>
+		<init-param>
+			<param-name>useEasyDataAccess</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>useEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>ecsideExport</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- ec 标签配置 -->
+	<context-param>
+		<param-name>ecsidePreferencesLocation</param-name>
+		<param-value>classpath:ecside.properties</param-value>
+	</context-param>
+	<!--
+		<context-param> <param-name>ecsideMessagesLocation</param-name>
+		<param-value>/WEB-INF/ecsideResourceBundle_zh_CN.properties,/WEB-INF/ecsideResourceBundle2_zh_CN.properties</param-value>
+		</context-param>
+	-->
+	
+	<!-- 工程的根名称 -->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>fsx.root</param-value>
+	</context-param>
+	<!-- loj4j的配置文件路径 和log4j的监听器-->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/log4j.properties</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			org.springframework.web.util.Log4jConfigListener
+		</listener-class>
+	</listener>
+	<!-- spring mvc的核心转发器 和转发的规则 -->
+	<servlet>
+		<servlet-name>fsx</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>fsx</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- spring IOC容器的配置文件位置和IOC容器的监听器 -->
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/applicationContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+	<!-- 对于某些不支持put delete 请求的浏览器，spring将进行转换。用途不是很大 -->
+	<filter>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<filter-class>
+			org.springframework.web.filter.HiddenHttpMethodFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>HiddenHttpMethodFilter</filter-name>
+		<servlet-name>fsx</servlet-name>
+	</filter-mapping>
+	<!-- 全局过滤器，主要用来判断登录、鉴权、编码转换,只过滤 /的动态资源 -->
+	<filter>
+		<filter-name>allFilter</filter-name>
+		<filter-class>com.lw.fsx.util.AllFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>allFilter</filter-name>
+		<!-- 和spring核心转发器过滤规则相同 -->
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<session-config>
+		<session-timeout>1440</session-timeout>
+	</session-config>
+	<!-- 欢迎页面 -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

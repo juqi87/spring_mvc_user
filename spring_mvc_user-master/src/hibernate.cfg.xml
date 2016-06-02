@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 自动提交开关 -->
+		<property name="connection.autocommit">true</property>
+		<!-- 打印sql语句开关 -->
+		<property name="hibernate.show_sql">false</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 连接池配置 -->
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.ProxoolConnectionProvider</property>
+		<property name="hibernate.proxool.pool_alias">myPool</property>
+		<property name="hibernate.proxool.xml">proxool.xml</property>
+		<!-- 表映射 -->
+		<mapping resource="com/lw/fsx/vo/Rolelist.hbm.xml" />
+		<mapping resource="com/lw/fsx/vo/Roledefinition.hbm.xml" />
+		<mapping resource="com/lw/fsx/vo/Adminuser.hbm.xml" />
+		<mapping resource="com/lw/fsx/vo/Itemdefine.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
